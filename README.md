@@ -1,1 +1,1 @@
-# cchm-gig
+# Clark County Historical Museum Gig Site
