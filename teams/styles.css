@@ -16,6 +16,21 @@ h1 {
 
 }
 
+.hero {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  color: #f1f1f1;
+  width: 100%;
+  background-color: rgba(128,128,128,0.7)
+}
+
+.hero h1 {
+  position: relative;
+  padding-top: 20%;
+  font-size: 3em;
+}
+
 #wrapper {
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,8 +65,12 @@ h1 {
     width: 100%;
 }
 
-#section1 {
-    
+@media screen and (max-width: 600px) {
+  .hero h1 {
+      position: relative;
+      padding-top: 60%;
+      font-size: 2.5em;
+  }
 }
 
 h1 {
