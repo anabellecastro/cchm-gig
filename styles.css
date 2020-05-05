@@ -40,9 +40,30 @@ h1 {
   outline: none;
   box-shadow: none;
 }
+.design {
+  background-image: url('./teams/img/design-team.jpeg');
+}
 
 .main {
     background-image: url('img/cchm_group.jpg');
+}
+.video {
+  background-image: url('./teams/img/video-team.jpg');
+}
+.web {
+  background-image: url('./teams/img/dev-team.jpg')
+}
+
+.content {
+  background-image: url('./teams/img/cont-team.jpg')
+}
+
+.leadership {
+  background-image: url('./teams/img/leader-team.jpg')
+}
+
+.headshot {
+  width: 200px;
 }
 
 .hero {
@@ -63,7 +84,7 @@ h1 {
 @media screen and (max-width: 600px) {
     .hero h1 {
         position: relative;
-        padding-top: 50%;
+        padding-top: 60%;
         font-size: 2.5em;
     }
 }
