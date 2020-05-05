@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../scripts/three.min.js"></script>
+        <script src="../scripts/OBJLoader.js"></script>
+        <script src="../scripts/MTLLoader.js"></script>
+        <script src="../scripts/DDSLoader.js"></script>
+        <script src="../scripts/OrbitControls.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
+        <title>Project Renovare</title>
+    </head>
+    <body>
+        <header>
+            <div class="topnav" id="myTopnav">
+                <a href="../index.html" class="active anchor">Home</a>
+                <!-- <a href="../#section2" class="anchor">About</a> -->
+              <div class="dropdown">
+                  <button class="dropbtn">Teams
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="../teams/leadership.html">Leadership</a>
+                    <a href="../teams/content.html">Content</a>
+                    <a href="../teams/design.html">Design</a>
+                    <a href="../teams/video.html">Video</a>
+                    <a href="../teams/webdev.html">Web Development</a>
+                  </div>
+                </div> 
+                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+              </div>
+            
+        </header>
+        <div id='canvas-container'>
+            <canvas id="show-models">
+        </div>
+        </canvas>
+
+        <script>
+            /**
+             * 
+             * PUT THE MTL AND OBJ FILE URL BELOW
+             * 
+             * */
+            let mtl = 'https://dtc-wsuv.org/projects/cchm-gig/plaque/plaque.mtl';
+            let obj = 'https://dtc-wsuv.org/projects/cchm-gig/plaque/plaque.obj';
+        </script>
+
+        <script>
+            /**
+             * DO NOT EDIT THE SCRIPT BELOW!!!!!
+             * 
+            */
+            let controls = null;
+            let renderer = null;
+            let scene = null;
+            let camera = null;
+            let canvas = null;
+            let group = null;
+            let isDragging = false;
+            let previousMousePosition = {
+                x: 0,
+                y: 0
+            };
+
+            function init() {
+                canvas = document.getElementById('show-models')
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+                renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+                renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+                scene.background = new THREE.Color('#EEEEEE')
+                var directionalLight = new THREE.DirectionalLight(0xffffff, 0.05);
+                directionalLight.position.set(10, 15, 12.5);
+                scene.add(directionalLight);
+                var ambientLight = new THREE.AmbientLight(0xffffff, 0.5)
+                scene.add(ambientLight);
+
+                camera.position.z = 15;
+                camera.position.y = 0;
+
+                var animate = function () {
+                    requestAnimationFrame(animate);
+                    if (controls) controls.update();
+                    renderer.render(scene, camera);
+                };
+                animate();
+
+                const manager = new THREE.LoadingManager();
+                manager.addHandler(/\.dds$/i, new THREE.DDSLoader());
+
+                new THREE.MTLLoader(manager)
+                    .load(mtl, materials => {
+                        materials.preload();
+                        const loader = new THREE.OBJLoader(manager);
+                        loader.setMaterials(materials).load(obj, object => {
+                            let scale = .10;
+                            object.scale.x = scale;
+                            object.scale.y = scale;
+                            object.scale.z = scale;
+
+                            object.position.x = 0;
+                            object.position.z = 0;
+                            object.position.y = 0;
+                            object.rotation.x = 0;
+                            object.children.forEach(obj => {
+                                obj.material.side = THREE.DoubleSide;
+                            });
+
+                            group = new THREE.Group();
+                            group.add(object);
+                            scene.add(group);
+
+                            renderer.domElement.addEventListener('mousedown', function() {
+                                isDragging = true;
+                            });
+
+                            renderer.domElement.addEventListener('mousemove', function(e) {
+                                let deltaMove = {
+                                    x: e.offsetX-previousMousePosition.x,
+                                    y: e.offsetY-previousMousePosition.y
+                                };
+                                if(isDragging) {
+                                    let deltaRotationQuaternion = new THREE.Quaternion()
+                                        .setFromEuler(new THREE.Euler(
+                                            toRadians(deltaMove.y * 1),
+                                            toRadians(deltaMove.x * 1),
+                                            0,
+                                            'XYZ'
+                                        ));
+                                    
+                                    group.quaternion.multiplyQuaternions(deltaRotationQuaternion, group.quaternion);
+                                }
+
+                                previousMousePosition = {
+                                    x: e.offsetX,
+                                    y: e.offsetY
+                                };
+                            });
+
+                            window.addEventListener('mouseup', function() {
+                                isDragging = false;
+                            })
+
+                            controls = new THREE.OrbitControls(camera, canvas);
+                            controls.enableRotate = false;
+                            controls.enablePan = false;
+
+
+
+                        }, (xhr) => console.log(xhr.loaded), err => console.log(err));
+                    }, progress => {
+                        console.log(progress);
+                    }, error => {
+                        console.error(error);
+                    })
+
+
+            }
+
+            init();
+
+            function windowResize() {
+                renderer.setSize(canvas.offsetWidth, canvas.offsetHeight );
+                camera.aspect = canvas.offsetWidth / (canvas.offsetHeight );
+                camera.updateProjectionMatrix();
+            }
+
+            function toRadians(angle) {
+                return angle * (Math.PI / 180);
+            }
+
+            function toDegrees(angle) {
+                return angle * (180 / Math.PI);
+            }
+
+            window.addEventListener('resize', windowResize)
+
+        </script>
+    </body>
+</html>
