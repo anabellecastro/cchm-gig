@@ -71,6 +71,19 @@ h1 {
   background-image: url('./teams/img/leader-team.jpg')
 }
 
+.group-img {
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+.cmdc-logo {
+  padding-top: 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .headshot {
   width: 200px;
 } 
@@ -265,8 +278,9 @@ div.headshot-contain {
 
 .headshot-contain img {
   width: 100%;
-  height: auto;
-    display: block;  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .headshot-contain a:link {
@@ -306,5 +320,11 @@ div.headshot-contain {
   justify-content: center;
 }
 
+.home-contain {
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  
+}
 
 }
