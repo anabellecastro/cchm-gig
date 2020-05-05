@@ -27,13 +27,14 @@ h1 {
     background-position: center;
 }
 
-#section1 {
+#section1, #section2 {
   position: relative;
   height: auto;
   overflow: hidden;
   padding: 50px;
   margin: 0 auto;
 }
+
 /* this is the canvas container to help size and center canvas */
 #canvas-container {
   width: 100vw;
