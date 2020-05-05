@@ -26,6 +26,14 @@ h1 {
     background-attachment: fixed;
     background-position: center;
 }
+
+#section1 {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  padding: 50px;
+  margin: 0 auto;
+}
 /* this is the canvas container to help size and center canvas */
 #canvas-container {
   width: 100vw;
@@ -64,7 +72,7 @@ h1 {
 
 .headshot {
   width: 200px;
-}
+} 
 
 .hero {
     position: absolute;
@@ -110,7 +118,7 @@ h1 {
   display: block;
   color: #000000;
   text-align: center;
-  padding: 14px 16px;
+  padding: 25px 40px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -135,7 +143,7 @@ h1 {
   border: none;
   outline: none;
   color: #000000;
-  padding: 14px 16px;
+  padding: 25px 40px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -241,4 +249,47 @@ h1 {
     width: 100%;
     text-align: left;
   }
+}
+
+/* HEADSHOTS */
+
+div.headshot-contain {
+  margin: 5px;
+  width: 100%;
+    display: block;  
+    padding-bottom: 5%;
+    position: relative;
+    overflow-wrap: break-word; 
+}
+
+.headshot-contain img {
+  width: 100%;
+  height: auto;
+    display: block;  
+}
+
+@media screen and (min-width: 1024px) {
+  .headshot-contain img {
+    width: 200px;  
+  }
+
+
+  div.headshot-contain {
+  float: left;
+  width: 25%;
+  margin-left: 5%;
+ 
+}
+
+.headshot-contain h2 {
+  position: relative;
+}
+
+.contain {
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+
 }
