@@ -268,9 +268,23 @@ div.headshot-contain {
     display: block;  
 }
 
+.headshot-contain a:link {
+  text-decoration: none;
+  color: #1FA2BF;
+  font-weight: 700;
+}
+
+.headshot-contain a:visited {
+  color: #1FA2BF;
+}
+
+.headshot-contain a:hover {
+  color: #000000;
+}
+
 @media screen and (min-width: 1024px) {
   .headshot-contain img {
-    width: 200px;  
+    width: 100%;  
   }
 
 
