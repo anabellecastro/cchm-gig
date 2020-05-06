@@ -28,7 +28,7 @@ h1 {
     overflow: hidden;
     position: relative;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center center; 
 }
 
 #section1, #section2, #section3 {
@@ -354,7 +354,7 @@ div.headshot-contain {
   height: auto;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 19%;
+  padding-bottom: 10%;
 }
 
 .home-contain h2 {
