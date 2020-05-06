@@ -352,6 +352,7 @@ div.headshot-contain {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  object-fit: fill;
 }
 
 .headshot-contain a:link {
@@ -374,6 +375,7 @@ div.headshot-contain {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 10%;
+  object-fit: fill;
 }
 
 .home-contain h2 {
