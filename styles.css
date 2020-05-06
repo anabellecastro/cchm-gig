@@ -22,7 +22,7 @@ h1 {
     font-family: 'Raleway', sans-serif;
 
 }
-
+/* Currently not using this unless switch back to fixed hero bg
 #wrapper {
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,7 +34,7 @@ h1 {
     background-attachment: fixed;
     background-position: center; 
 } 
-
+*/
 
 
 #section1, #section2, #section3 {
@@ -49,7 +49,7 @@ h1 {
   position: relative;
   height: auto;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .bg {
@@ -71,15 +71,17 @@ h1 {
   outline: none;
   box-shadow: none;
 }
+
+/*
 .design {
   background-image: url('./teams/img/design-team.jpeg');
   
 }
 
-/*.main {
+.main {
     background-image: url('img/cchm_group.jpg');
     
-}*/
+}
 .video {
   background-image: url('./teams/img/video-team.jpg');
 }
@@ -94,7 +96,7 @@ h1 {
 .leadership {
   background-image: url('./teams/img/leader-team.jpg')
 }
-
+*/
 .group-img {
     margin: 0 auto;
     width: 100%;
@@ -138,8 +140,8 @@ h1 {
 }
 
 .hero h1 {
-    position: relative;
     font-size: 3em;
+    padding-top: 25%;
 }
 
 .column {
@@ -163,7 +165,7 @@ h1 {
 @media screen and (max-width: 600px) {
     .hero h1 {
         position: relative;
-        padding-top: 60%;
+        padding-top: 20%;
         font-size: 2.5em;
     }
 
