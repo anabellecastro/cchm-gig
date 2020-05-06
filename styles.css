@@ -23,19 +23,34 @@ h1 {
 #wrapper {
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0 auto;
     min-height: 100%;
     width: 100%;
     overflow: hidden;
     position: relative;
     background-attachment: fixed;
-    background-position: center center; 
-}
+    background-position: center; 
+} 
+
+
 
 #section1, #section2, #section3 {
   position: relative;
   height: auto;
   overflow: hidden;
   padding: 50px;
+  margin: 0 auto;
+}
+
+#section0 {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.bg {
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -58,10 +73,10 @@ h1 {
   
 }
 
-.main {
+/*.main {
     background-image: url('img/cchm_group.jpg');
     
-}
+}*/
 .video {
   background-image: url('./teams/img/video-team.jpg');
 }
@@ -121,7 +136,6 @@ h1 {
 
 .hero h1 {
     position: relative;
-    padding-top: 20%;
     font-size: 3em;
 }
 
