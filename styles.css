@@ -197,6 +197,18 @@ h1 {
   font-weight: 800;
 }
 
+.team {
+  text-decoration: none;
+  color: #1FA2BF;
+}
+.team:visited {
+  color: #1FA2BF;
+}
+
+.team:hover {
+  color: #000000;
+}
+
 .dropdown .dropbtn {
   font-size: 17px;    
   border: none;
