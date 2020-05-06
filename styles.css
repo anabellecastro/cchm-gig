@@ -93,6 +93,12 @@ h1 {
   margin-right: auto;
 }
 
+.wsuv-logo {
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .headshot {
   width: 200px;
 } 
