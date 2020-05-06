@@ -329,9 +329,6 @@ div.headshot-contain {
   padding-bottom: 5%;
 }
 
-.home-contain p {
-  padding-bottom: 5%;
-}
 
 @media screen and (min-width: 1024px) {
   .headshot-contain img {
