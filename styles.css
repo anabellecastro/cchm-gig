@@ -368,7 +368,13 @@ div.headshot-contain {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  object-fit: fill;
+  background-size:cover;
+  background: url('/teams/img/img-v/videosplash.png') no-repeat center center;
+  overflow: hidden;
+  object-fit: cover;
+    z-index: -100;
+    right: 0;
+    bottom: 0;
 }
 
 .headshot-contain a:link {
@@ -388,10 +394,17 @@ div.headshot-contain {
 .home-contain video {
   width: 100%;
   height: auto;
+  padding-bottom: 5%;
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 10%;
-  object-fit: fill;
+  background-size:cover;
+  background: url('/teams/img/img-v/videosplash.png') no-repeat center center;
+  overflow: hidden;
+  object-fit: cover;
+    z-index: -100;
+    right: 0;
+    bottom: 0;
 }
 
 .home-contain h2 {
