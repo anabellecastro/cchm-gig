@@ -41,7 +41,7 @@ h1 {
   position: relative;
   height: auto;
   overflow: hidden;
-  padding: 50px;
+  padding: 25px;
   margin: 0 auto;
 }
 
@@ -180,8 +180,8 @@ h1 {
 }
 
 h1 {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     text-align: center;
 }
 
@@ -193,6 +193,10 @@ h1 {
   background-color: #ffffff;
   font-family: 'Raleway', sans-serif;
   font-weight: 800;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .topnav a {
@@ -252,6 +256,7 @@ h1 {
   min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  position: fixed;
 }
 
 .dropdown-content a {
@@ -286,7 +291,7 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -325,7 +330,7 @@ h1 {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -371,7 +376,7 @@ div.headshot-contain {
   background-size:cover;
   background: url('/teams/img/img-v/videosplash.png') no-repeat center center;
   overflow: hidden;
-  object-fit: cover;
+  object-fit: contain;
     z-index: -100;
     right: 0;
     bottom: 0;
@@ -394,26 +399,27 @@ div.headshot-contain {
 .home-contain video {
   width: 100%;
   height: auto;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   background-size:cover;
   background: url('/teams/img/img-v/videosplash.png') no-repeat center center;
   overflow: hidden;
-  object-fit: cover;
+  object-fit: contain;
     z-index: -100;
     right: 0;
     bottom: 0;
 }
 
 .home-contain h2 {
-  padding-bottom: 5%;
+  padding-bottom: 2%;
 }
 
 .logos {
   display: block;
 }
+
 
 
 @media screen and (min-width: 1024px) {
@@ -441,7 +447,7 @@ div.headshot-contain {
 }
 
 .contain h2 {
-  padding-bottom: 5%;
+  padding-bottom: 2%;
 }
 
 #section2 h2 {
