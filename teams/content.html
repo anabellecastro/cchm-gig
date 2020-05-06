@@ -30,6 +30,8 @@
         </div> 
         <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up"></i>
+      </button>
 
     <div id="section0" class="content">
       <img src="../teams/img/content-team.jpg" class="bg">
@@ -205,7 +207,24 @@ function myFunction() {
 }
 </script>
 
-
+<script>
+  var mybutton = document.getElementById("myBtn");
+  
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
 </body>
 
 
