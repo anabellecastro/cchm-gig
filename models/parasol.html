@@ -98,14 +98,14 @@
                         materials.preload();
                         const loader = new THREE.OBJLoader(manager);
                         loader.setMaterials(materials).load(obj, object => {
-                            let scale = .25;
+                            let scale = 1;
                             object.scale.x = scale;
                             object.scale.y = scale;
                             object.scale.z = scale;
 
                             object.position.x = 0;
                             object.position.z = 0;
-                            object.position.y = 0;
+                            object.position.y = -5;
                             object.rotation.x = 0;
                             object.children.forEach(obj => {
                                 obj.material.side = THREE.DoubleSide;
