@@ -290,6 +290,13 @@ div.headshot-contain {
   margin-right: auto;
 }
 
+.headshot-contain video {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .headshot-contain a:link {
   text-decoration: none;
   color: #1FA2BF;
