@@ -54,7 +54,7 @@ h1 {
 }
 
 .main {
-    background-image: url('img/cchm_group.jpg');
+    background-image: url('img/cchm_group2.jpg');
 }
 .video {
   background-image: url('./teams/img/video-team.jpg');
@@ -115,6 +115,11 @@ h1 {
         position: relative;
         padding-top: 60%;
         font-size: 2.5em;
+    }
+
+    #show-models {
+      width: 100vw !important;
+
     }
 }
 
