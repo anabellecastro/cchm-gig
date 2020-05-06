@@ -311,6 +311,14 @@ div.headshot-contain {
   color: #000000;
 }
 
+.home-contain video {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5%;
+}
+
 @media screen and (min-width: 1024px) {
   .headshot-contain img {
     width: 100%;  
