@@ -46,8 +46,8 @@
              * PUT THE MTL AND OBJ FILE URL BELOW
              * 
              * */
-            let mtl = 'https://dtc-wsuv.org/projects/cchm-gig/ld-pin/lindadavis.mtl';
-            let obj = 'https://dtc-wsuv.org/projects/cchm-gig/ld-pin/lindadavis.obj';
+            let mtl = 'https://dtc-wsuv.org/projects/cchm-gig/stringball/stringball.mtl';
+            let obj = 'https://dtc-wsuv.org/projects/cchm-gig/stringball/stringball.obj';
         </script>
 
         <script>
@@ -98,7 +98,7 @@
                         materials.preload();
                         const loader = new THREE.OBJLoader(manager);
                         loader.setMaterials(materials).load(obj, object => {
-                            let scale = 2.5;
+                            let scale = 115;
                             object.scale.x = scale;
                             object.scale.y = scale;
                             object.scale.z = scale;

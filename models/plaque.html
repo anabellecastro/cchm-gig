@@ -98,12 +98,12 @@
                         materials.preload();
                         const loader = new THREE.OBJLoader(manager);
                         loader.setMaterials(materials).load(obj, object => {
-                            let scale = .10;
+                            let scale = .085;
                             object.scale.x = scale;
                             object.scale.y = scale;
                             object.scale.z = scale;
 
-                            object.position.x = 0;
+                            object.position.x = .85;
                             object.position.z = 0;
                             object.position.y = 0;
                             object.rotation.x = 0;
