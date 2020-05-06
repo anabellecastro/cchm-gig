@@ -11,6 +11,10 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1 {
     font-family: 'Raleway', sans-serif;
 
@@ -89,15 +93,14 @@ h1 {
 .cmdc-logo {
   padding-top: 5%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  clear: both;
 }
 
 .wsuv-logo {
   width: 25%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  clear: both;
+  
 }
 .headshot {
   width: 200px;
@@ -120,6 +123,24 @@ h1 {
     position: relative;
     padding-top: 20%;
     font-size: 3em;
+}
+
+.column {
+  float: left;
+  width: 48%;
+  padding: 5px;
+}
+
+.row {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 @media screen and (max-width: 600px) {
@@ -340,6 +361,10 @@ div.headshot-contain {
   padding-bottom: 5%;
 }
 
+.logos {
+  display: block;
+}
+
 
 @media screen and (min-width: 1024px) {
   .headshot-contain img {
@@ -375,13 +400,14 @@ div.headshot-contain {
 
 .home-contain {
   width: 50%;
-  margin: 0 auto;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   
 }
 
 .home-contain .headshot-contain {
   width: 40%;
+  
 }
 
 }
