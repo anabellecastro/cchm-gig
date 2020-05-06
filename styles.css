@@ -27,7 +27,7 @@ h1 {
     background-position: center;
 }
 
-#section1, #section2 {
+#section1, #section2, #section3 {
   position: relative;
   height: auto;
   overflow: hidden;
@@ -51,10 +51,12 @@ h1 {
 }
 .design {
   background-image: url('./teams/img/design-team.jpeg');
+  
 }
 
 .main {
     background-image: url('img/cchm_group.jpg');
+    
 }
 .video {
   background-image: url('./teams/img/video-team.jpg');
@@ -94,6 +96,10 @@ h1 {
 .headshot {
   width: 200px;
 } 
+
+.headshot-img {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
 
 .hero {
     position: absolute;
@@ -176,7 +182,7 @@ h1 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -184,7 +190,7 @@ h1 {
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 16px 20px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -316,6 +322,14 @@ div.headshot-contain {
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 19%;
+}
+
+.home-contain h2 {
+  padding-bottom: 5%;
+}
+
+.home-contain p {
   padding-bottom: 5%;
 }
 
@@ -338,8 +352,17 @@ div.headshot-contain {
 
 .contain {
   width: 80%;
-  margin: 0 auto;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.contain h2 {
+  padding-bottom: 5%;
+}
+
+#section2 h2 {
+  margin-left: 5%
 }
 
 .home-contain {
@@ -349,4 +372,13 @@ div.headshot-contain {
   
 }
 
+.home-contain .headshot-contain {
+  width: 40%;
+}
+
+}
+
+.model-style {
+  color: #1FA2BF;
+  font-weight: 600;
 }
